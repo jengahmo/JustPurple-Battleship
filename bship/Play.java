@@ -28,258 +28,77 @@ public class Play {
 		System.out.println(p1.getCounter());
 		//cruiser
 		while (ovCheck == false){
-		while (check == false){
-			System.out.println("Player 1, enter the x coordinate of your Cruiser: ");
-			xstr = input.next();
-			check = Controls.XcoordCheck(xstr);
+			ovCheck = p1.loop(masterpgrid, ovCheck, input, 2, "Cruiser");
 		}
-		x = Controls.xToInt(xstr);
-		check = false;
-		while (check == false){
-			System.out.println("Player 1, enter the y coordinate of your Cruiser: ");
-			y = input.next();
-			check = Controls.YcoordCheck(y);
-		}
-		yint = Controls.stringToInt(y);
-		check = false;
-		while (check == false){
-			System.out.println("Player 1, enter the direction of your Cruiser "
-				+ "(0 = up, 1 = right, 2 = down, 3 = left): ");
-			dir = input.nextInt();
-			check = Controls.placeCheck(x, y, 2, dir);
-		}
-		check = false;
-		ovCheck = Controls.overlapCheck(x, yint, 2, dir, masterpgrid);
-		}
-		p1.Place(x, yint, "c", 2, dir, p1, masterpgrid);
+		p1.Place(p1.getX(), p1.getY(), "c", 2, p1.getDir(), p1, masterpgrid);
 		Grid.showGrid(p1.getGrid());
 		ovCheck = false;
 		//sub
 		while (ovCheck == false){
-		while (check == false){
-			System.out.println("Player 1, enter the x coordinate of your Sub: ");
-			xstr = input.next();
-			check = Controls.XcoordCheck(xstr);
+			ovCheck = p1.loop(masterpgrid, ovCheck, input, 3, "Sub");
 		}
-		x = Controls.xToInt(xstr);
-		check = false;
-		while (check == false){
-			System.out.println("Player 1, enter the y coordinate of your Sub: ");
-			y = input.next();
-			check = Controls.YcoordCheck(y);
-		}
-		yint = Controls.stringToInt(y);
-		check = false;
-		while (check == false){
-			System.out.println("Player 1, enter the direction of your Sub "
-				+ "(0 = up, 1 = right, 2 = down, 3 = left): ");
-			dir = input.nextInt();
-			check = Controls.placeCheck(x, y, 3, dir);
-		}
-		check = false;
-		ovCheck = Controls.overlapCheck(x, yint, 3, dir, masterpgrid);
-		}
-		p1.Place(x, yint, "s", 3, dir, p1, masterpgrid);
+		p1.Place(p1.getX(), p1.getY(), "s", 3, p1.getDir(), p1, masterpgrid);
 		Grid.showGrid(p1.getGrid());
 		ovCheck = false;
 		
 		//destroyer
 		while (ovCheck == false){
-		while (check == false){
-			System.out.println("Player 1, enter the x coordinate of your Destroyer: ");
-			xstr = input.next();
-			check = Controls.XcoordCheck(xstr);
+			ovCheck = p1.loop(masterpgrid, ovCheck, input, 3, "Destroyer");
 		}
-		x = Controls.xToInt(xstr);
-		check = false;
-		while (check == false){
-			System.out.println("Player 1, enter the y coordinate of your Destroyer: ");
-			y = input.next();
-			check = Controls.YcoordCheck(y);
-		}
-		yint = Controls.stringToInt(y);
-		check = false;
-		while (check == false){
-			System.out.println("Player 1, enter the direction of your Destroyer "
-				+ "(0 = up, 1 = right, 2 = down, 3 = left): ");
-			dir = input.nextInt();
-			check = Controls.placeCheck(x, y, 3, dir);
-		}
-		check = false;
-		ovCheck = Controls.overlapCheck(x, yint, 3, dir, masterpgrid);
-		}
-		p1.Place(x, yint, "d", 3, dir, p1, masterpgrid);
+		p1.Place(p1.getX(), p1.getY(), "d", 3, p1.getDir(), p1, masterpgrid);
 		Grid.showGrid(p1.getGrid());
 		ovCheck = false;
 		//battleship
 		while (ovCheck == false){
-		while (check == false){
-			System.out.println("Player 1, enter the x coordinate of your Battleship: ");
-			xstr = input.next();
-			check = Controls.XcoordCheck(xstr);
+			ovCheck = p1.loop(masterpgrid, ovCheck, input, 4, "Battleship");
 		}
-		x = Controls.xToInt(xstr);
-		check = false;
-		while (check == false){
-			System.out.println("Player 1, enter the y coordinate of your Battleship: ");
-			y = input.next();
-			check = Controls.YcoordCheck(y);
-		}
-		yint = Controls.stringToInt(y);
-		check = false;
-		while (check == false){
-			System.out.println("Player 1, enter the direction of your Battleship "
-				+ "(0 = up, 1 = right, 2 = down, 3 = left): ");
-			dir = input.nextInt();
-			check = Controls.placeCheck(x, y, 4, dir);
-		}
-		check = false;
-		ovCheck = Controls.overlapCheck(x, yint, 4, dir, masterpgrid);
-		}
-		
-		p1.Place(x, yint, "b", 4, dir, p1, masterpgrid);
+		p1.Place(p1.getX(), p1.getY(), "b", 4, p1.getDir(), p1, masterpgrid);
 		Grid.showGrid(p1.getGrid());
 		ovCheck = false;
 		
 		//aircraft carrier
 		while (ovCheck == false){
-		while (check == false){
-			System.out.println("Player 1, enter the x coordinate of your Aircraft Carrier: ");
-			xstr = input.next();
-			check = Controls.XcoordCheck(xstr);
+			ovCheck = p1.loop(masterpgrid, ovCheck, input, 4, "Aircraft Carrier");
 		}
-		x = Controls.xToInt(xstr);
-		check = false;
-		while (check == false){
-			System.out.println("Player 1, enter the y coordinate of your Aircraft Carrier: ");
-			y = input.next();
-			check = Controls.YcoordCheck(y);
-		}
-		yint = Controls.stringToInt(y);
-		check = false;
-		while (check == false){
-			System.out.println("Player 1, enter the direction of your Aircraft Carrier "
-				+ "(0 = up, 1 = right, 2 = down, 3 = left): ");
-			dir = input.nextInt();
-			check = Controls.placeCheck(x, y, 5, dir);
-		}
-		check = false;
-		ovCheck = Controls.overlapCheck(x, yint, 5, dir, masterpgrid);
-		}
-		p1.Place(x, yint, "a", 5, dir, p1, masterpgrid);
+		p1.Place(p1.getX(), p1.getY(), "a", 4, p1.getDir(), p1, masterpgrid);
 		Grid.showGrid(p1.getGrid());
 		ovCheck = false;
 		//AI setup
 		//cruiser
 		Random rand = new Random();
 		while (ovCheck == false){
-		while (check == false){
-			x = rand.nextInt(9) + 1;
-			check = Controls.AIcoordCheck(x);
+			ovCheck = ai.AILoop(ovCheck, masteraigrid, rand, 2);
 		}
-		check = false;
-		while (check == false){
-			yint = rand.nextInt(9) + 1;
-			check = Controls.AIcoordCheck(yint);
-		}
-		check = false;
-		while (check == false){
-			dir = rand.nextInt(3);
-			check = Controls.AIplaceCheck(x, yint, 2, dir);
-		}
-		check = false;
-		ovCheck = Controls.AIoverlapCheck(x, yint, 2, dir, masteraigrid);
-		}
-		ai.Place(x, yint, "c", 2, dir, ai, masteraigrid);
+		ai.Place(ai.getX(), ai.getY(), "c", 2, ai.getDir(), ai, masteraigrid);
 		ovCheck = false;
 		
 		//sub
 		while (ovCheck == false){
-		while (check == false){
-			x = rand.nextInt(9) + 1;
-			check = Controls.AIcoordCheck(x);
+			ovCheck = ai.AILoop(ovCheck, masteraigrid, rand, 3);
 		}
-		check = false;
-		while (check == false){
-			yint = rand.nextInt(9) + 1;
-			check = Controls.AIcoordCheck(yint);
-		}
-		check = false;
-		while (check == false){
-			dir = rand.nextInt(3);
-			check = Controls.AIplaceCheck(x, yint, 3, dir);
-		}
-		check = false;
-		ovCheck = Controls.AIoverlapCheck(x, yint, 3, dir, masteraigrid);
-		}
+		ai.Place(ai.getX(), ai.getY(), "s", 3, ai.getDir(), ai, masteraigrid);
 		ovCheck = false;
-		ai.Place(x, yint, "s", 3, dir, ai, masteraigrid);
 		
 		//destroyer
 		while (ovCheck == false){
-		while (check == false){
-			x = rand.nextInt(9) + 1;
-			check = Controls.AIcoordCheck(x);
+			ovCheck = ai.AILoop(ovCheck, masteraigrid, rand, 3);
 		}
-		check = false;
-		while (check == false){
-			yint = rand.nextInt(9) + 1;
-			check = Controls.AIcoordCheck(yint);
-		}
-		check = false;
-		while (check == false){
-			dir = rand.nextInt(3);
-			check = Controls.AIplaceCheck(x, yint, 3, dir);
-		}
-		check = false;
-		ovCheck = Controls.AIoverlapCheck(x, yint, 3, dir, masteraigrid);
-		}
+		ai.Place(ai.getX(), ai.getY(), "d", 3, ai.getDir(), ai, masteraigrid);
 		ovCheck = false;
-		ai.Place(x, yint, "d", 3, dir, ai, masteraigrid);
-		
 		
 		//battleship
 		while (ovCheck == false){
-		while (check == false){
-			x = rand.nextInt(9) + 1;
-			check = Controls.AIcoordCheck(x);
+			ovCheck = ai.AILoop(ovCheck, masteraigrid, rand, 4);
 		}
-		check = false;
-		while (check == false){
-			yint = rand.nextInt(9) + 1;
-			check = Controls.AIcoordCheck(yint);
-		}
-		check = false;
-		while (check == false){
-			dir = rand.nextInt(3);
-			check = Controls.AIplaceCheck(x, yint, 4, dir);
-		}
-		check = false;
-		ovCheck = Controls.AIoverlapCheck(x, yint, 4, dir, masteraigrid);
-		}
+		ai.Place(ai.getX(), ai.getY(), "b", 4, ai.getDir(), ai, masteraigrid);
 		ovCheck = false;
-		ai.Place(x, yint, "b", 4, dir, ai, masteraigrid);
 		
 		//aircraft carrier
 		while (ovCheck == false){
-		while (check == false){
-			x = rand.nextInt(9) + 1;
-			check = Controls.AIcoordCheck(x);
+			ovCheck = ai.AILoop(ovCheck, masteraigrid, rand, 5);
 		}
-		check = false;
-		while (check == false){
-			yint = rand.nextInt(9) + 1;
-			check = Controls.AIcoordCheck(yint);
-		}
-		check = false;
-		while (check == false){
-			dir = rand.nextInt(3);
-			check = Controls.AIplaceCheck(x, yint, 5, dir);
-		}
-		check = false;
-		ovCheck = Controls.AIoverlapCheck(x, yint, 5, dir, masteraigrid);
-		}
-		ai.Place(x, yint, "a", 5, dir, ai, masteraigrid);
+		ai.Place(ai.getX(), ai.getY(), "a", 5, ai.getDir(), ai, masteraigrid);
+		
 		
 		while (p1.getCounter() != 0 && ai.getCounter() != 0){
 			System.out.println("Enemy Radar");

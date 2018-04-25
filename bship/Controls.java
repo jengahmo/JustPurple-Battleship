@@ -31,6 +31,33 @@ public class Controls {
 		return y;
 	}
 	
+	public static int dirToInt(String str){
+		int dir = 0;
+		str = str.toUpperCase();
+		switch (str){
+		case "0": dir = 0;
+		break;
+		case "U": dir = 0;
+		break;
+		case "1": dir = 1;
+		break;
+		case "R": dir = 1;
+		break;
+		case "2": dir = 2;
+		break;
+		case "D": dir = 2;
+		break;
+		case "3": dir = 3;
+		break;
+		case "L": dir = 3;
+		break;
+		
+		default : 
+			System.out.println("Error, invalid entry, try again");
+		}
+		return dir;
+	}
+	
 	public static int xToInt(String xstr){
 		int y = 0;
 		switch (xstr){
@@ -91,7 +118,7 @@ public class Controls {
 		int check = 0;
 		if (dir == 0){
 			for (int i = 0; i < slen; i++){
-				if (grid[y-i][x] != "o"){
+				if (grid[y-i][x] != "."){
 					check++;
 				}
 				
@@ -104,7 +131,7 @@ public class Controls {
 		}
 		if (dir == 1){
 			for (int i = 0; i < slen; i++){
-				if (grid[y][x+i] != "o"){
+				if (grid[y][x+i] != "."){
 					check++;
 				}
 				
@@ -117,7 +144,7 @@ public class Controls {
 		}
 		if (dir == 2){
 			for (int i = 0; i < slen; i++){
-				if (grid[y+i][x] != "o"){
+				if (grid[y+i][x] != "."){
 					check++;
 				}
 			}
@@ -129,7 +156,7 @@ public class Controls {
 		}
 		if (dir == 3){
 			for (int i = 0; i < slen; i++){
-				if (grid[y][x-i] != "o"){
+				if (grid[y][x-i] != "."){
 					check++;
 				}
 			}
@@ -150,7 +177,7 @@ public class Controls {
 		int check = 0;
 		if (dir == 0){
 			for (int i = 0; i < slen; i++){
-				if (grid[y-i][x] != "o"){
+				if (grid[y-i][x] != "."){
 					check++;
 				}
 			}
@@ -161,7 +188,7 @@ public class Controls {
 		}
 		if (dir == 1){
 			for (int i = 0; i < slen; i++){
-				if (grid[y][x+i] != "o"){
+				if (grid[y][x+i] != "."){
 					check++;
 				}	
 			}
@@ -172,7 +199,7 @@ public class Controls {
 		}
 		if (dir == 2){
 			for (int i = 0; i < slen; i++){
-				if (grid[y+i][x] != "o"){
+				if (grid[y+i][x] != "."){
 					check++;
 				}
 			}
@@ -183,7 +210,7 @@ public class Controls {
 		}
 		if (dir == 3){
 			for (int i = 0; i < slen; i++){
-				if (grid[y][x-i] != "o"){
+				if (grid[y][x-i] != "."){
 					check++;
 				}
 			}
