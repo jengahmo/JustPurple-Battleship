@@ -58,9 +58,9 @@ public class Play {
 		
 		//aircraft carrier
 		while (ovCheck == false){
-			ovCheck = p1.loop(masterpgrid, ovCheck, input, 4, "Aircraft Carrier");
+			ovCheck = p1.loop(masterpgrid, ovCheck, input, 5, "Aircraft Carrier");
 		}
-		p1.Place(p1.getX(), p1.getY(), "a", 4, p1.getDir(), p1, masterpgrid);
+		p1.Place(p1.getX(), p1.getY(), "a", 5, p1.getDir(), p1, masterpgrid);
 		Grid.showGrid(p1.getGrid());
 		ovCheck = false;
 		//AI setup

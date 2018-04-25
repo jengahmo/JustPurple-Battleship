@@ -59,32 +59,32 @@ public class Controls {
 	}
 	
 	public static int xToInt(String xstr){
-		int y = 0;
+		int x = 0;
 		switch (xstr){
-		case "1": y = 1;
+		case "1": x = 1;
 		break;
-		case "2": y = 2;
+		case "2": x = 2;
 		break;
-		case "3": y = 3;
+		case "3": x = 3;
 		break;
-		case "4": y = 4;
+		case "4": x = 4;
 		break;
-		case "5": y = 5;
+		case "5": x = 5;
 		break;
-		case "6": y = 6;
+		case "6": x = 6;
 		break;
-		case "7": y = 7;
+		case "7": x = 7;
 		break;
-		case "8": y = 8;
+		case "8": x = 8;
 		break;
-		case "9": y = 9;
+		case "9": x = 9;
 		break;
-		case "10": y = 10;
+		case "10": x = 10;
 		break;
 		default : 
 			System.out.println("Error, invalid entry, try again");
 		}
-		return y;
+		return x;
 	}
 	
 	
